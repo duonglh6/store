@@ -1,0 +1,10 @@
+com\keysoft\configuration\SpringConfiguration.class
+com\keysoft\controller\UserController.class
+com\keysoft\dao\impl\UserDAOImpl.class
+com\keysoft\entity\UserEntity.class
+com\keysoft\service\UserService.class
+com\keysoft\service\impl\UserServiceImpl.class
+com\keysoft\model\UserDTO.class
+com\keysoft\converter\UserConverter.class
+com\keysoft\configuration\Webinitializer.class
+com\keysoft\dao\UserDAO.class

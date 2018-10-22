@@ -1,4 +1,4 @@
-create database storemanagement char set utf8 collate utf8_general_ci
+create database storemanagement char set utf8 collate utf8_general_ci;
 use storemanagement;
 create table role(
  role_id integer not null auto_increment,
