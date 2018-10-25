@@ -15,6 +15,7 @@
 			<th>Role ID</th>
 			<th>DOB</th>
 			<th>Username</th>
+			<th>Sex</th>
 		</tr>
 
 		<c:forEach var="listUser" items="${listUser}">
@@ -26,9 +27,15 @@
 <%-- 			</c:url> --%>
 			<tr>
 				<td>${listUser.roleId}</td>
-				<td>${listUser.dob}</td>
+				<td>${listUser.date}</td>
 				<td>${listUser.username}</td>
-<%-- 				<td><a href="${updateLink}">Update</a> --%>
+				
+				<c:if test="${listUser.gender == 1}">		<td>Nam</td>
+				</c:if>
+				<c:if test="${listUser.gender == 0}">
+				<td>Nu</td>
+				</c:if>
+				<td><a  href='<c:url value="/edit-user/${listUser.userId}"/>'>Update</a>
 <!-- 				| -->
 <%-- 				<a href="${deleteLink}">Delete</a></td> --%>
 			</tr>

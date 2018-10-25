@@ -1,5 +1,6 @@
 package com.keysoft.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -33,9 +35,9 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/add-user", method = RequestMethod.POST)
-	public String addUser(ModelMap map, @ModelAttribute("user") UserDTO userDTO,
-			@RequestParam("dateTime") String dateTime, BindingResult bindingResult) {
-		userDTO.setDob(dateTime);
+	public String addUser(ModelMap map, @ModelAttribute("user") UserDTO userDTO
+			) {
+		//tat ca dua vao service xu ly controller chi goi ra ! :D
 		userService.addUser(userDTO);
 		return "redirect:/all-user";
 	}
@@ -61,5 +63,12 @@ public class UserController {
 	public String dateTime(Model model, @RequestParam("dateTime") String dateTime) {
 		model.addAttribute("dateTime", dateTime);
 		return "user/viewDateTime";
+	}
+	
+	@RequestMapping(value = "/edit-user/{idUser}", method = RequestMethod.GET)
+	public String editUser(Model model,@PathVariable("idUser") Integer id) {
+		UserDTO dto = userService.getUserById(id);
+	   model.addAttribute("user", dto);
+		return "user/edit";
 	}
 }

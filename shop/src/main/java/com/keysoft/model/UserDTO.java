@@ -12,7 +12,7 @@ public class UserDTO {
 	
 	private int userId;
 	private String address;
-	private String dob;
+	private String date;
 	private String email;
 	private String fullName;
 	private byte gender;
@@ -22,6 +22,7 @@ public class UserDTO {
 	private String username;
 	private Integer roleId;
 	private Map<Integer, String> listRole;
+
 	
 	
 	
@@ -60,12 +61,7 @@ public class UserDTO {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public String getDob() {
-		return dob;
-	}
-	public void setDob(String dob) {
-		this.dob = dob;
-	}
+	
 	public String getEmail() {
 		return email;
 	}
@@ -123,6 +119,14 @@ public class UserDTO {
 	}
 	public void setListRole(Map<Integer, String> listRole) {
 		this.listRole = listRole;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
 	}
 	
 }

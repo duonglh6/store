@@ -17,8 +17,8 @@
 <script>
 	$(function() {
 		$("#datepicker-3").datepicker({
-			appendText : "(yy-mm-dd)",
-			dateFormat : "yy-mm-dd",
+			appendText : "(dd-mm-yy)",
+			dateFormat : "dd-mm-yy",
 		// 		$("#datepicker-11").datepicker({
 		// 			showWeek : true,
 		// 			yearSuffix : "-CE",
@@ -64,7 +64,8 @@
 			</tr>
 			<tr>
 				<td>Enter Date:</td>
-				<td><input name="dateTime" type="text" id="datepicker-3"></td>
+				<td><form:input path="date" id="datepicker-3" /></td>
+
 			</tr>
 			<tr>
 				<td>Select Role:</td>
@@ -73,7 +74,13 @@
 						<form:options items="${user.listRole}" />
 					</form:select></td>
 			</tr>
-
+			<tr>
+				<td>SEX:</td>
+				<form:radiobutton path="gender" value="1" />
+				Male
+				<form:radiobutton path="gender" value="0" />
+				Female
+			</tr>
 		</table>
 		<input type="submit" value="Submit">
 
