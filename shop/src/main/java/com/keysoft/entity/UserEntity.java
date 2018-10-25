@@ -1,8 +1,14 @@
 package com.keysoft.entity;
 
 import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
 import javax.persistence.*;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.keysoft.dao.RoleDAO;
 import com.keysoft.model.UserDTO;
 
 import java.util.Date;
@@ -18,6 +24,10 @@ import java.util.List;
 @NamedQuery(name="UserEntity.findAll", query="SELECT u FROM UserEntity u")
 public class UserEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
+//	dung o tang Service nhe
+//	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//	@Autowired
+//	RoleDAO roleDAO;
 
 	@Id
 	@Column(name="user_id")
@@ -62,22 +72,25 @@ public class UserEntity implements Serializable {
 	}
 	
 
-	public UserEntity(UserDTO user) {
-		super();
-		this.userId = userId;
-		this.address = address;
-		this.dob = dob;
-		this.email = email;
-		this.fullName = fullName;
-		this.gender = gender;
-		this.identityNumber = identityNumber;
-		this.password = password;
-		this.phoneNumber = phoneNumber;
-		this.username = username;
-		this.bills = bills;
-		this.comments = comments;
-		this.role = role;
-	}
+//	public UserEntity(UserDTO user) {
+//		super();
+//		this.userId = user.getUserId();
+//		this.address = user.getAddress();
+//		try {
+//			this.dob = sdf.parse(user.getDob());
+//		} catch (ParseException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		this.email = user.getEmail();
+//		this.fullName = user.getUsername();
+//		this.gender = user.getGender();
+//		this.identityNumber = user.getIdentityNumber();
+//		this.password = user.getPassword();
+//		this.phoneNumber = user.getPhoneNumber();
+//		this.username = user.getUsername();
+//		this.role =roleDAO.getRoleById(user.getRoleId());
+//	}
 
 
 	public int getUserId() {
@@ -168,19 +181,19 @@ public class UserEntity implements Serializable {
 		this.bills = bills;
 	}
 
-	public BillEntity addBill(BillEntity bill) {
-		getBills().add(bill);
-		bill.setUser(this);
+//	public BillEntity addBill(BillEntity bill) {
+//		getBills().add(bill);
+//		bill.setUser(this);
+//
+//		return bill;
+//	}
 
-		return bill;
-	}
-
-	public BillEntity removeBill(BillEntity bill) {
-		getBills().remove(bill);
-		bill.setUser(null);
-
-		return bill;
-	}
+//	public BillEntity removeBill(BillEntity bill) {
+//		getBills().remove(bill);
+//		bill.setUser(null);
+//
+//		return bill;
+//	}
 
 	public List<CommentEntity> getComments() {
 		return this.comments;
@@ -190,19 +203,19 @@ public class UserEntity implements Serializable {
 		this.comments = comments;
 	}
 
-	public CommentEntity addComment(CommentEntity comment) {
-		getComments().add(comment);
-		comment.setUser(this);
-
-		return comment;
-	}
-
-	public CommentEntity removeComment(CommentEntity comment) {
-		getComments().remove(comment);
-		comment.setUser(null);
-
-		return comment;
-	}
+//	public CommentEntity addComment(CommentEntity comment) {
+//		getComments().add(comment);
+//		comment.setUser(this);
+//
+//		return comment;
+//	}
+//
+//	public CommentEntity removeComment(CommentEntity comment) {
+//		getComments().remove(comment);
+//		comment.setUser(null);
+//
+//		return comment;
+//	}
 
 	public RoleEntity getRole() {
 		return this.role;

@@ -1,7 +1,9 @@
 package com.keysoft.service.impl;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -46,6 +48,13 @@ public class RoleServiceImpl implements RoleService {
 		}
 		return listRoleDTO;
 	}
-	
+	public Map<Integer, String> showAllRole(){
+		Map<Integer, String> listRole = new HashMap<Integer, String>();
+		List<RoleEntity> listRoleEntity = roleDAO.getAllRole();
+		for (RoleEntity roleEntity : listRoleEntity) {
+			listRole.put(roleEntity.getRoleId(), roleEntity.getRoleName());
+		}
+		return listRole;
+	}
 
 }
