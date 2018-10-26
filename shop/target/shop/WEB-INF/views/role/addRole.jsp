@@ -13,7 +13,7 @@
 	<p>Form add Role</p>
 	<form:form modelAttribute="role" method="POST" action="${formSubmit}">
 
-		<form:input path="roleId" />
+<%-- 		<form:input path="roleId" /> --%>
 		<form:input path="roleName" />
 		<button type="submit">Submit</button>
 

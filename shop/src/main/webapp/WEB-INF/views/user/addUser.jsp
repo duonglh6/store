@@ -1,10 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
-<!DOCTYPE html>
-<html>
+
 <head>
 <meta charset="utf-8">
 <title>jQuery UI Datepicker functionality</title>
@@ -17,8 +15,8 @@
 <script>
 	$(function() {
 		$("#datepicker-3").datepicker({
-			appendText : "(dd-mm-yy)",
-			dateFormat : "dd-mm-yy",
+			appendText : "(yy-mm-dd)",
+			dateFormat : "yy-mm-dd",
 		// 		$("#datepicker-11").datepicker({
 		// 			showWeek : true,
 		// 			yearSuffix : "-CE",
@@ -52,7 +50,8 @@
 			</tr>
 			<tr>
 				<td>Password:</td>
-				<td><form:input path="password" /></td>
+				<td><form:password path="password"/></td>
+				
 			</tr>
 			<tr>
 				<td>Phone Number:</td>
@@ -65,7 +64,6 @@
 			<tr>
 				<td>Enter Date:</td>
 				<td><form:input path="date" id="datepicker-3" /></td>
-
 			</tr>
 			<tr>
 				<td>Select Role:</td>
@@ -75,15 +73,15 @@
 					</form:select></td>
 			</tr>
 			<tr>
-				<td>SEX:</td>
-				<form:radiobutton path="gender" value="1" />
-				Male
-				<form:radiobutton path="gender" value="0" />
-				Female
+				<td>Gender:</td>
+				<td><form:radiobutton path="gender" value="1"/>Male
+				<form:radiobutton path="gender" value="0"/>Female
+				<form:radiobutton path="gender" value="2"/>Other
+				</td>
 			</tr>
+
 		</table>
 		<input type="submit" value="Submit">
+<!-- 		<button type="button" class="btn  btn-raised bg-indigo waves-effect">INDIGO</button> -->
 
 	</form:form>
-</body>
-</html>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?><!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>     <!-- Base Definition -->
+	<definition name="base-definition" template="/WEB-INF/views/layouts/defaultLayout.jsp">
+		<put-attribute name="header" value="/WEB-INF/views/layouts/header.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/views/layouts/menu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/views/layouts/footer.jsp" />
+	</definition>       <!-- Home Page -->
+	
+	
+	
+<!-- 	ROLEs VIEW -->
+
+	<definition name="addRol" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/role/addRol.jsp" />
+	</definition>
+	<definition name="showAllRole" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/role/showAllRole.jsp" />
+	</definition>
+	<definition name="updateRole" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/role/updateRole.jsp" />
+	</definition>
+	
+<!-- 	USERs VIEW -->
+
+<definition name="addUser" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/user/addUser.jsp" />
+	</definition>
+	<definition name="showAllUser" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/user/showAllUser.jsp" />
+	</definition>
+	<definition name="updateUser" extends="base-definition">
+		<put-attribute name="body" value="/WEB-INF/views/user/updateUser.jsp" />
+	</definition>
+	
+	
+	
+	
+</tiles-definitions>

@@ -6,9 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class UserDTO {
-//	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-//	@Autowired 
-//	RoleService roleService;
+
 	
 	private int userId;
 	private String address;
@@ -22,7 +20,6 @@ public class UserDTO {
 	private String username;
 	private Integer roleId;
 	private Map<Integer, String> listRole;
-
 	
 	
 	
@@ -32,22 +29,6 @@ public class UserDTO {
 		super();
 		
 	}
-	
-//	public UserDTO(UserEntity user) {
-//		super();
-//		this.userId = user.getUserId();
-//		this.address = user.getAddress();
-//		this.dob = sdf.format(user.getDob());
-//		this.email = user.getEmail();
-//		this.fullName = user.getFullName();
-//		this.gender = user.getGender();
-//		this.identityNumber = user.getIdentityNumber();
-//		this.password = user.getPassword();
-//		this.phoneNumber = user.getPhoneNumber();
-//		this.username = user.getUsername();
-//		this.roleId = user.getRole().getRoleId();
-//		
-//	}
 
 	public int getUserId() {
 		return userId;
@@ -61,7 +42,15 @@ public class UserDTO {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -119,14 +108,6 @@ public class UserDTO {
 	}
 	public void setListRole(Map<Integer, String> listRole) {
 		this.listRole = listRole;
-	}
-
-	public String getDate() {
-		return date;
-	}
-
-	public void setDate(String date) {
-		this.date = date;
 	}
 	
 }

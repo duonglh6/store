@@ -22,7 +22,7 @@ public class RoleController {
 	public String addUser(ModelMap model) {
 		RoleDTO roleDTO = new RoleDTO();
 		model.addAttribute("role", roleDTO);
-		return "role/addRole";
+		return "addRol";
 	}
 
 	@RequestMapping(value = "/add-role", method = RequestMethod.POST)
@@ -35,7 +35,7 @@ public class RoleController {
 	public String showAllRole(ModelMap model) {
 
 		model.addAttribute("listRole", roleService.getAllRole());
-		return "role/showAllRole";
+		return "showAllRole";
 
 	}
 
@@ -48,7 +48,7 @@ public class RoleController {
 	@RequestMapping(value = "/update-role", method = RequestMethod.GET)
 	public String updateUser(ModelMap model, @RequestParam(value="roleId") int roleId) {
 		model.addAttribute("role", roleService.getRoleById(roleId));
-		return "role/updateRole";
+		return "updateRole";
 	}
 
 	@RequestMapping(value = "/update-role", method = RequestMethod.POST)
