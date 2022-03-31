@@ -11,7 +11,7 @@
 		<hibernate-validator>6.0.12.Final</hibernate-validator>
 		<validation-api>2.0.1.Final</validation-api>
 		<spring-jdbc>5.0.8.RELEASE</spring-jdbc>
-		<spring-webmvc>4.3.19.RELEASE</spring-webmvc>
+		<spring-webmvc>5.3.18</spring-webmvc>
 		<javax.servlet-api>4.0.1</javax.servlet-api>
 		<javax.servlet.jsp-api>2.3.3</javax.servlet.jsp-api>
 		<jstl>1.2</jstl>
